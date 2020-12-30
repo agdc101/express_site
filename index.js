@@ -18,7 +18,10 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/project/:id', (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
+    if(isNaN(id)) {
+        return next();
+    }
     res.render('project', { project: data.projects[id] });
 });
 
@@ -28,6 +31,7 @@ app.get('/project/:id', (req, res) => {
 app.use((req, res) => {
     const err = new Error('Page Not Found!');
     err.status = 404;
+    console.error(err.message, err.status);
     res.status(404).render('page-not-found', { err });
 });
 
@@ -37,9 +41,8 @@ app.use((req, res, err, next) => {
         res.status(404).render('page-not-found', { err });
     } else {
         err.message = err.message || 'Whoops! There was an error on the server!';
-        if (err.status === undefined){
-            err.status = 500;
-        }
-        res.status(err.status).render('error', { err } );
+        err.status = 500;
+        res.render('error', {err});
+        next();
     }
 });
