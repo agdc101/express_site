@@ -35,6 +35,15 @@
                 "live_link": "https://agdc101.github.io/interactive_form/",
                 "github_link": "https://github.com/agdc101/interactive_form",
                 "images_urls": ["/images/activities-form.png", "/images/payment-form.png"]
+            },
+            {
+                "id": 4,
+                "project_name": "random quote generator",
+                "description": "displaying random quotes at the users request",
+                "technologies": ["HTML", "CSS", "Javascript"],
+                "live_link": "https://agdc101.github.io/quote_generator/",
+                "github_link": "https://github.com/agdc101/quote_generator",
+                "images_urls": ["/images/quote_pic_1.png", "/images/quote_pic_2.png"]
             }
         ]
 }
