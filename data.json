@@ -1,0 +1,40 @@
+{
+    "projects": [ 
+            {
+                "id": 0,
+                "project_name": "pagination",
+                "description": "Displaying student data using pagination!",
+                "technologies": ["HTML", "CSS", "Javascript"],
+                "live_link": "https://agdc101.github.io/data_pagination/",
+                "github_link": "https://github.com/agdc101/data_pagination",
+                "images_urls": ["/images/pagination.png", "/images/pagi_main.png"]
+            }, 
+            {
+                "id": 1,
+                "project_name": "phrase hunter game",
+                "description": "a phrase guessing game!",
+                "technologies": ["HTML", "CSS", "Javascript"],
+                "live_link": " https://agdc101.github.io/phrase_hunter/",
+                "github_link": "https://github.com/agdc101/phrase_hunter",
+                "images_urls": ["/images/lose_game.png", "/images/win_game.png"]
+            },
+            {
+                "id": 2,
+                "project_name": "api employee directory",
+                "description": "interacting with the random person generator to display employee profiles",
+                "technologies": ["HTML", "CSS", "Javascript"],
+                "live_link": "https://agdc101.github.io/public_api_request/",
+                "github_link": "https://github.com/agdc101/public_api_request",
+                "images_urls": ["/images/api.png", "/images/modal_api.png"]
+            },
+            {
+                "id": 3,
+                "project_name": "form validation",
+                "description": "Using javascript to provide live user form validation",
+                "technologies": ["HTML", "CSS", "Javascript"],
+                "live_link": "https://agdc101.github.io/interactive_form/",
+                "github_link": "https://github.com/agdc101/interactive_form",
+                "images_urls": ["/images/activities-form.png", "/images/payment-form.png"]
+            }
+        ]
+}

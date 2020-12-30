@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content 
+  article.grid-container.portfolio-intro
+    div
+
+      h1 Let's make the web great together
+
+      p.lead.text-light
+        | A portfolio that demonstrates all the skills i have learnt through my time at treehouse.
+  article.grid-container.portfolio-index
+    
+    .grid-x.grid-margin-x.small-up-2.medium-up-2.large-up-3
+      each project in projects
+        .cell
+          a(href=`project/${project.id}` target='_blank')
+            img.thumbnail(src=`${project.images_urls[1]}`)
+            h5 #{project.project_name}
+    
+      
