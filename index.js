@@ -31,6 +31,7 @@ app.use((req, res) => {
     res.status(404).render('page-not-found', { err });
 });
 
+//--GENERAL ERROR HANDLER
 app.use((req, res, err, next) => {
     if (err.status === 404) {
         res.status(404).render('page-not-found', { err });
