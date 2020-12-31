@@ -20,7 +20,7 @@ app.get('/about', (req, res) => {
 app.get('/project/:id', (req, res) => {
     let { id } = req.params;
     if(isNaN(id)) {
-        return next();
+        res.redirect('/project'); // redirects user to produce a 404 error.
     }
     res.render('project', { project: data.projects[id] });
 });
@@ -43,6 +43,5 @@ app.use((req, res, err, next) => {
         err.message = err.message || 'Whoops! There was an error on the server!';
         err.status = 500;
         res.render('error', {err});
-        next();
     }
 });
