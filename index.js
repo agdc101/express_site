@@ -19,8 +19,8 @@ app.get('/about', (req, res) => {
 
 app.get('/project/:id', (req, res) => {
     let { id } = req.params;
-    if(isNaN(id)) {
-        res.redirect('/project'); // redirects user to produce a 404 error.
+    if(isNaN(id) || id > data.projects.length - 1) {
+        res.redirect('/project'); // redirects user to produce a 404 error if the query does not match a project
     }
     res.render('project', { project: data.projects[id] });
 });
@@ -35,13 +35,13 @@ app.use((req, res) => {
     res.status(404).render('page-not-found', { err });
 });
 
-//--GENERAL ERROR HANDLER
-app.use((req, res, err, next) => {
+//-- GENERAL ERROR HANDLER
+app.use((err, req, res, next) => {   
+    err.status = err.status || 500;
+    err.message = err.message || 'Server Error';
     if (err.status === 404) {
         res.status(404).render('page-not-found', { err });
     } else {
-        err.message = err.message || 'Whoops! There was an error on the server!';
-        err.status = 500;
-        res.render('error', {err});
+        res.status(err.status).render('error', { err });
     }
 });
